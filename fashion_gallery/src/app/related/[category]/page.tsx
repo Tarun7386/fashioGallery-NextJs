@@ -2,6 +2,7 @@
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Banner from '@/components/Banner';
 
 
@@ -80,9 +81,11 @@ const CategoryPage: React.FC = () => {
               <p className="text-gray-600 mt-2 text-sm">{item.description}</p>
               <div className="flex justify-between items-center mt-4">
                 <span className="text-xl font-extrabold text-gray-900">₹{item.cost.toFixed(2)}</span>
+                <Link href={`/contactUs?id=${item._id}`}>
                 <button className="ml-2 px-3 py-1 bg-blue-500 text-white text-xs font-semibold rounded hover:bg-blue-600 focus:outline-none">
                   Contact Us
                 </button>
+                </Link>
               </div>
             </div>
           </div>
